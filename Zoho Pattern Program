@@ -1,0 +1,57 @@
+Pattern Program
+
+Input: 5
+
+           0
+            1 0 1        
+         2 1 0 1 2      
+      3 2 1 0 1 2 3    
+   4 3 2 1 0 1 2 3 4  
+5 4 3 2 1 0 1 2 3 4 5
+
+Input: 3
+
+
+           0
+            1 0 1        
+         2 1 0 1 2      
+      3 2 1 0 1 2 3    
+
+
+//Source Code
+
+//Header File
+#include<stdio.h>
+
+//main function
+int main()
+{
+    
+    int number,index,index2,k,m;          //variable declartion
+    scanf("%d",&number);                  //get a input from user
+	number=number+1; 
+	for(index=0;index<number;index++)
+	{
+		k=index;
+		m=0;
+		for(index2=1;index2<2*number;index2++)
+		{
+			if(k==0)
+				m=1;
+			if(index2>=number-index && index2<=number+index)
+			{
+				if(m==1)
+					printf("%d",k++);
+				else
+					printf("%d",k--);
+			}
+			else
+			{
+				printf(" ");
+			}
+	} 
+	printf("\n");
+}
+    
+    return 0;
+}
